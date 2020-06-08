@@ -9,6 +9,7 @@ import { FilterComponent } from './filter/filter.component';
 import { ContactsGridComponent } from './contacts-grid/contacts-grid.component';
 import { CommonModule } from '@angular/common';
 import { ContactsItemComponent } from './contacts-grid/contacts-item/contacts-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactsItemComponent } from './contacts-grid/contacts-item/contacts-it
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

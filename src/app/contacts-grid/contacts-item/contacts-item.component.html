@@ -1,47 +1,11 @@
-<article class="contact">
+<article class="contact" *ngFor="let contact of contacts">
     <span class="contact__avatar">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jennyyo/128.jpg" alt="avatar" />
+      <img src="{{contact.avatar}}" alt="avatar" />
     </span>
-    <span class="contact__data">Adrian Lakin</span>
-    <span class="contact__data">(862) 704-3661</span>
-    <span class="contact__data">Lao People's Democratic Republic</span>
-    <span class="contact__data">04/09/2019</span>
-    <span class="contact__data">Hoeger Inc</span>
-    <span class="contact__data">Industrial</span>
-</article>
-
-<article class="contact">
-    <span class="contact__avatar">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jennyyo/128.jpg" alt="avatar" />
-    </span>
-    <span class="contact__data">Adrian Lakin</span>
-    <span class="contact__data">(862) 704-3661</span>
-    <span class="contact__data">Lao People's Democratic Republic</span>
-    <span class="contact__data">04/09/2019</span>
-    <span class="contact__data">Hoeger Inc</span>
-    <span class="contact__data">Industrial</span>
-</article>
-
-<article class="contact">
-    <span class="contact__avatar">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jennyyo/128.jpg" alt="avatar" />
-    </span>
-    <span class="contact__data">Adrian Lakin</span>
-    <span class="contact__data">(862) 704-3661</span>
-    <span class="contact__data">Lao People's Democratic Republic</span>
-    <span class="contact__data">04/09/2019</span>
-    <span class="contact__data">Hoeger Inc</span>
-    <span class="contact__data">Industrial</span>
-</article>
-
-<article class="contact">
-    <span class="contact__avatar">
-      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/jennyyo/128.jpg" alt="avatar" />
-    </span>
-    <span class="contact__data">Adrian Lakin</span>
-    <span class="contact__data">(862) 704-3661</span>
-    <span class="contact__data">Lao People's Democratic Republic</span>
-    <span class="contact__data">04/09/2019</span>
-    <span class="contact__data">Hoeger Inc</span>
-    <span class="contact__data">Industrial</span>
+    <span class="contact__data">{{contact.name}}</span>
+    <span class="contact__data">{{contact.phone}}</span>
+    <span class="contact__data">{{contact.country}}</span>
+    <span class="contact__data">{{contact.admissionDate}}</span>
+    <span class="contact__data">{{contact.company}}</span>
+    <span class="contact__data">{{contact.department}}</span>
 </article>
