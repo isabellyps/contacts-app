@@ -1,4 +1,7 @@
 <app-topbar></app-topbar>
-<app-filter></app-filter>
-<app-contacts-grid></app-contacts-grid>
+<app-filter
+[(contactListFilter)]="contactListFilter"
+[contactList]="contactList">
+></app-filter>
+<app-contacts-grid [(contacts)]="contactListFilter"></app-contacts-grid>
 <router-outlet></router-outlet>

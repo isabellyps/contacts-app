@@ -10,5 +10,15 @@
         <span class="contact__data">Departamento</span>
       </article>
     </section>
-    <app-contacts-item></app-contacts-item>
+    <app-contacts-item 
+    *ngFor="let contact of contacts"
+    [avatar]="contact.avatar"
+    [name]="contact.name"
+    [phone]="contact.phone"
+    [country]="contact.country"
+    [admissionDate]="contact.admissionDate"
+    [company]="contact.company"
+    [department]="contact.department"
+    >
+    ></app-contacts-item>
 </div>

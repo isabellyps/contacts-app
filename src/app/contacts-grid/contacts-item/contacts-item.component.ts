@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Contact } from 'src/app/service/contacts-service/contacts-service.model';
-import { ContactsService } from 'src/app/service/contacts-service/contacts-service.service';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-contacts-item',
@@ -10,20 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class ContactsItemComponent implements OnInit {
 
-  contact = {} as Contact;
-  contacts: Contact[];
+  @Input() public avatar: any;
+  @Input() public name: string;
+  @Input() public phone: string;
+  @Input() public country: string;
+  @Input() public admissionDate: Date;
+  @Input() public company: string;
+  @Input() public department: string;
 
-  constructor(private contactService: ContactsService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.contactList();
+    
   }
 
-  contactList() {
-    this.contactService.contactsList()
-      .subscribe((contacts: Contact[]) => {
-        this.contacts = contacts;
-    });
-  }
+  
 
 }
