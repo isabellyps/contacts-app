@@ -8,55 +8,108 @@ import { Contact } from '../service/contacts-service/contacts-service.model'
   styleUrls: ['./filter.component.scss'],
 })
 export class FilterComponent implements OnInit {
-  @Input() contactList: Contact[]
-  @Input() contactListFilter: Contact[]
+  @Input() contactList: Contact[];
+  @Input() contactListFilter: Contact[];
 
   @Output() contactListFilterChange: EventEmitter<Contact[]> = new EventEmitter<
     Contact[]
   >()
 
-  public filterModel: string
-  // livro = [];
-  // filtro: string;
+  public filterModel: string;
+  public isSelect: boolean;
+  public orderByNameSelect: boolean;
+  public orderByCountrySelect: boolean;
+  public orderByCompanySelect: boolean;
+  public orderByDepartamentSelect: boolean;
+  public orderByAdmissionDateSelect: boolean;
 
-  faSearch = faSearch
+  faSearch = faSearch;
 
-  constructor() {}
+  constructor() {
+    this.isSelect = false;
+    this.orderByNameSelect = false;
+    this.orderByCountrySelect = false;
+    this.orderByCompanySelect = false;
+    this.orderByDepartamentSelect = false;
+    this.orderByAdmissionDateSelect = false;
+  }
 
   ngOnInit(): void {}
 
   orderByName() {
-    this.contactListFilter = this.contactListFilter.sort((a, b) =>
+    if(!this.orderByNameSelect)
+    {
+      this.contactListFilter = this.contactListFilter.sort((a, b) =>
       a.name < b.name ? -1 : a.name > b.name ? 1 : 0,
     )
+    this.isSelect = true;
+    this.orderByNameSelect = true;
+    this.orderByCountrySelect = false;
+    this.orderByCompanySelect = false;
+    this.orderByDepartamentSelect = false;
+    this.orderByAdmissionDateSelect = false;
+    }  
   }
 
   orderByCountry() {
-    this.contactListFilter = this.contactListFilter.sort((a, b) =>
+    if(!this.orderByCountrySelect) {
+      this.contactListFilter = this.contactListFilter.sort((a, b) =>
       a.country < b.country ? -1 : a.country > b.country ? 1 : 0,
     )
+    this.isSelect = true;
+    this.orderByCountrySelect = true;
+    this.orderByNameSelect = false;
+    this.orderByCompanySelect = false;
+    this.orderByDepartamentSelect = false;
+    this.orderByAdmissionDateSelect = false;
+    }
+    
   }
 
   orderByCompany() {
-    this.contactListFilter = this.contactListFilter.sort((a, b) =>
+    if(!this.orderByCompanySelect) {
+      this.contactListFilter = this.contactListFilter.sort((a, b) =>
       a.company < b.company ? -1 : a.company > b.company ? 1 : 0,
     )
+    this.isSelect = true;
+    this.orderByCompanySelect = true;
+    this.orderByNameSelect = false;
+    this.orderByCountrySelect = false;
+    this.orderByDepartamentSelect = false;
+    this.orderByAdmissionDateSelect = false;
+    }
   }
 
   orderByDepartament() {
-    this.contactListFilter = this.contactListFilter.sort((a, b) =>
+    if(!this.orderByDepartamentSelect) {
+      this.contactListFilter = this.contactListFilter.sort((a, b) =>
       a.department < b.department ? -1 : a.department > b.department ? 1 : 0,
     )
+    this.isSelect = true;
+    this.orderByDepartamentSelect = true;
+    this.orderByNameSelect = false;
+    this.orderByCountrySelect = false;
+    this.orderByCompanySelect = false;
+    this.orderByAdmissionDateSelect = false;
+    }
   }
 
   orderByAdmissionDate() {
-    this.contactListFilter = this.contactListFilter.sort((a, b) =>
+    if(!this.orderByAdmissionDateSelect) {
+      this.contactListFilter = this.contactListFilter.sort((a, b) =>
       a.admissionDate < b.admissionDate
         ? -1
         : a.admissionDate > b.admissionDate
         ? 1
         : 0,
     )
+    this.isSelect = true;
+    this.orderByAdmissionDateSelect = true;
+    this.orderByNameSelect = false;
+    this.orderByCountrySelect = false;
+    this.orderByCompanySelect = false;
+    this.orderByDepartamentSelect = false;
+    }
   }
 
   filterContactList(event: any) {

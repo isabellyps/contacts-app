@@ -7,19 +7,19 @@
                 <fa-icon [icon]="faSearch"></fa-icon>
             </button>
         </div>
-        <button class="filters__item is-selected" (click)="orderByName()">
+        <button [ngClass]="{'filters__item': !isSelect, 'filters__item--select': isSelect && orderByNameSelect}" (click)="orderByName()">
             Nome
         </button>
-        <button class="filters__item" (click)="orderByCountry()">
+        <button  [ngClass]="{'filters__item': !isSelect, 'filters__item--select': isSelect && orderByCountrySelect}" (click)="orderByCountry()">
             País
         </button>
-        <button class="filters__item" (click)="orderByCompany()">
+        <button  [ngClass]="{'filters__item': !isSelect, 'filters__item--select': isSelect && orderByCompanySelect}" (click)="orderByCompany()">
             Empresa
         </button>
-        <button class="filters__item" (click)="orderByDepartament()">
+        <button  [ngClass]="{'filters__item': !isSelect, 'filters__item--select': isSelect && orderByDepartamentSelect}" (click)="orderByDepartament()">
             Departamento
         </button>
-        <button class="filters__item" (click)="orderByAdmissionDate()">
+        <button  [ngClass]="{'filters__item': !isSelect, 'filters__item--select': isSelect && orderByAdmissionDateSelect}" (click)="orderByAdmissionDate()">
             Data de admissão
         </button>
     </section>
