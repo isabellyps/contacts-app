@@ -113,7 +113,6 @@ export class FilterComponent implements OnInit {
   }
 
   filterContactList(event: any) {
-    console.log(event.target.value)
     if (event.target.value) {
       this.contactListFilter = this.contactList.filter((value) =>
         value.name.toLowerCase().includes(event.target.value.toLowerCase()),

@@ -1,3 +1,4 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactsGridComponent } from './contacts-grid.component';
@@ -8,6 +9,7 @@ describe('ContactsGridComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      schemas: [ NO_ERRORS_SCHEMA ],
       declarations: [ ContactsGridComponent ]
     })
     .compileComponents();
